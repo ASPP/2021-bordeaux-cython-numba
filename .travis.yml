@@ -1,0 +1,13 @@
+language: python
+
+notifications:
+    email: false
+
+install:
+    - source .build_tools/travis/install.sh
+
+before_script:
+    - make clean
+
+script:
+    - make test
