@@ -1,0 +1,8 @@
+zstd is currently one of the best compression algorithms.
+It doesn't achieve the highest compression ratios known, but is close.
+It is orders of magnitude faster than compressors with similar efficiency.
+
+/usr/include/zstd.h defines a set of functions to compress and decompress data.
+Add the missing pieces in wrap_zstd.pyx to call those functions.
+
+test_wrap_zstd.py will try to import wrap_zstd and call .compress() and .decompress().

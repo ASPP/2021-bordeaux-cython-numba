@@ -1,0 +1,14 @@
+prange() doesn't seem to always work in the ipython notebook with %%cython magic.
+By doing the compilation manually, we can control the details and see any warnings:
+
+On the commandline:
+
+cython -3 mean_filter.pyx
+gcc -O3 -shared -fPIC -o mean_filter.so mean_filter.c -fopenmp $(pkgconf python3 --cflags --libs)
+
+In IPython:
+
+import mean_filter
+import numpy as np
+arr = np.random.rand(10**6)
+%timeit mean_filter.mean3filter4(arr)
