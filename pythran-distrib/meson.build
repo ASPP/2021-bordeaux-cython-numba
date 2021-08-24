@@ -16,7 +16,7 @@ silence_warnings = ['-Wno-unused-function',
 
 integrate_f6_cc = custom_target(
   'integrate_f6.cc',
-  input : 'integrate_f6.py',
+  input : 'python/integrate_f6.py',
   output : 'integrate_f6.cc',
   command : [pythran,
              '@INPUT@',

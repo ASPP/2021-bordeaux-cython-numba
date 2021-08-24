@@ -1,0 +1,20 @@
+This directory shows how to speed up integrate_f6() using pythran.
+
+There are three ways how to build the extension:
+
+1. "Manual" invocation of pythran:
+
+   mkdir build-pythran
+   pythran python/integrate_f6.py -o 'build-pythran/integrate_f6%{ext}' 
+   PYTHONPATH=build-pythran python -c 'import integrate_f6; print(integrate_f6)'
+
+2. Compilation with setuptools
+
+   python setup.py build
+   PYTHONPATH=build/lib.linux-x86_64-3.9 python -c 'import integrate_f6; print(integrate_f6)'
+
+3. Compilation with meson
+
+   meson build-meson
+   ninja -C build-meson
+   PYTHONPATH=build-meson python -c 'import integrate_f6; print(integrate_f6)'
