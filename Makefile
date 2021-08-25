@@ -1,7 +1,0 @@
-
-
-all:
-
-test:
-
-clean:
